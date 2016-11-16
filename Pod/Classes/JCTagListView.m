@@ -55,7 +55,7 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     _tagTextColor = [UIColor darkGrayColor];
     _tagSelectedBackgroundColor = [UIColor colorWithRed:217/255.0f green:217/255.0f blue:217/255.0f alpha:1];
     
-    _tagCornerRadius = 10.0f;
+    _tagCornerRadius = 3.0f;
     
     JCCollectionViewTagFlowLayout *layout = [[JCCollectionViewTagFlowLayout alloc] init];
     
@@ -86,9 +86,9 @@ static NSString * const reuseIdentifier = @"tagListViewItemId";
     JCCollectionViewTagFlowLayout *layout = (JCCollectionViewTagFlowLayout *)collectionView.collectionViewLayout;
     CGSize maxSize = CGSizeMake(collectionView.frame.size.width - layout.sectionInset.left - layout.sectionInset.right, layout.itemSize.height);
     
-    CGRect frame = [self.tags[indexPath.item] boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14.0f]} context:nil];
+    CGRect frame = [self.tags[indexPath.item] boundingRectWithSize:maxSize options:NSStringDrawingUsesFontLeading|NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:10.0f]} context:nil];
     
-    return CGSizeMake(frame.size.width + 20.0f, layout.itemSize.height);
+    return CGSizeMake(frame.size.width + 10.0f, layout.itemSize.height);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
